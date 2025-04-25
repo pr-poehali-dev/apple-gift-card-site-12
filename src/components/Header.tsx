@@ -19,9 +19,39 @@ const Header = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/products" className={navigationMenuTriggerStyle()}>
-                Карты
-              </Link>
+              <NavigationMenuTrigger>Товары</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <Link to="/products" className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-apple-gray/50 to-apple-gray p-6 no-underline outline-none focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-medium">
+                          Gift Cards
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          Пополните счет iTunes и App Store с моментальной доставкой
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <Link to="/accessories" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <div className="text-sm font-medium leading-none">Аксессуары</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Оригинальные аксессуары для устройств Apple
+                      </p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/gift-sets" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <div className="text-sm font-medium leading-none">Подарочные наборы</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Комплекты товаров Apple со специальными скидками
+                      </p>
+                    </Link>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link to="/instructions" className={navigationMenuTriggerStyle()}>
